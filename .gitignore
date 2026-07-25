@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+ep_outputs/
+*_patched.idf
+.vscode/
+.env
