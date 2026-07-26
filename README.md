@@ -385,7 +385,7 @@ streamlit run app.py
 <tr>
 <td align="center">
 
-**K Dheerj**
+**K Dheeraj**
 
 AI Developer • Machine Learning • Building Intelligence
 
