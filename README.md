@@ -12,7 +12,13 @@ An intelligent cognitive automation layer that continuously optimizes commercial
 
 <p align="center">
 
+<b> Open the EcoLoop-AI Streamlit Dashboard</b>
+
 [![Open in Streamlit](https://img.shields.io/badge/Open_in-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ecoloop-ai.streamlit.app/)
+
+<b> View PPT and Pitch Deck on Google Drive</b>
+
+[![View Pitch & PPT](https://img.shields.io/badge/View_Pitch_&_PPT-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/170_cMAriZX-NsGDitZCSugzPtA6YxHjH?usp=sharing)
 
 </p>
 
