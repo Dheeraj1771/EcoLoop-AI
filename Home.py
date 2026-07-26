@@ -8,15 +8,8 @@ inject_custom_css()
 # Custom inline CSS for the Home Page cards to ensure Light/Dark mode compatibility
 st.markdown("""
     <style>
-    /* Default / Dark Mode Styling */
-    .arch-card-blue { background-color: #1E1E1E; padding: 20px; border-radius: 10px; border-top: 5px solid #2196F3; height: 100%; color: #FFFFFF; }
-    .arch-card-orange { background-color: #1E1E1E; padding: 20px; border-radius: 10px; border-top: 5px solid #FF9800; height: 100%; color: #FFFFFF; }
-
-    /* Light Mode Overrides */
-    @media (prefers-color-scheme: light) {
-        .arch-card-blue { background-color: #f0f2f6; color: #000000; }
-        .arch-card-orange { background-color: #f0f2f6; color: #000000; }
-    }
+    .arch-card-blue { background-color: var(--secondary-background-color); padding: 20px; border-radius: 10px; border-top: 5px solid #2196F3; height: 100%; color: var(--text-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+    .arch-card-orange { background-color: var(--secondary-background-color); padding: 20px; border-radius: 10px; border-top: 5px solid #FF9800; height: 100%; color: var(--text-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
     </style>
 """, unsafe_allow_html=True)
 
@@ -26,12 +19,18 @@ st.markdown("<h3 style='text-align: center; color: gray;'>Autonomous Building Op
 st.markdown("<br>", unsafe_allow_html=True)
 
 # --- SYSTEM STATUS BAR ---
-st.markdown("#### 📡 Live System Telemetry")
-c1, c2, c3, c4 = st.columns(4)
-c1.success("🟢 **System Status:** Online")
-c2.info("⚙️ **EnergyPlus Engine:** Synced")
-c3.warning("🧠 **Llama-3.1-8B:** Connected")
-c4.error("📊 **Telemetry Stream:** Active")
+st.markdown("### 📡 Live System Telemetry")
+col1, col2, col3, col4 = st.columns(4)
+
+def telemetry_card(icon, title, status, color):
+    return f"""<div style="background-color: var(--secondary-background-color); color: var(--text-color); padding: 15px; border-radius: 8px; text-align: center; border-bottom: 3px solid {color}; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <span style="font-size: 18px;">{icon} <b>{title}:</b> {status}</span>
+    </div>"""
+
+with col1: st.markdown(telemetry_card("🟢", "System", "Online", "#4CAF50"), unsafe_allow_html=True)
+with col2: st.markdown(telemetry_card("⚙️", "EnergyPlus", "Synced", "#2196F3"), unsafe_allow_html=True)
+with col3: st.markdown(telemetry_card("🧠", "Llama-3.1", "Connected", "#FF9800"), unsafe_allow_html=True)
+with col4: st.markdown(telemetry_card("📊", "Telemetry", "Active", "#F44336"), unsafe_allow_html=True)
 
 st.divider()
 

@@ -13,8 +13,15 @@ inject_custom_css()
 # --- Page-Specific CSS ---
 st.markdown("""
     <style>
-    .insight-card-orange { background-color: #1E1E1E; padding: 25px; border-radius: 10px; border-top: 5px solid #FF9800; color: #FFFFFF; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    @media (prefers-color-scheme: light) { .insight-card-orange { background-color: #f0f2f6; color: #000000; } }
+    .insight-card-orange { 
+        background-color: var(--secondary-background-color); 
+        padding: 25px; 
+        border-radius: 10px; 
+        border-top: 5px solid #FF9800; 
+        color: var(--text-color); 
+        margin-bottom: 25px; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    }
     </style>
 """, unsafe_allow_html=True)
 

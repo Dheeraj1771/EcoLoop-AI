@@ -9,23 +9,19 @@ def inject_custom_css():
     st.markdown("""
         <style>
         /* --- Sidebar Navigation Font Size Fix --- */
-        [data-testid="stSidebarNav"] span {
-            font-size: 18px !important;
-            font-weight: 500 !important;
+        section[data-testid="stSidebar"] div[data-testid="stSidebarNav"] ul li a span {
+            font-size: 19px !important;
+            font-weight: 600 !important;
         }
+        section[data-testid="stSidebar"] div[data-testid="stSidebarNav"] * { font-size: 19px !important; }
+        section[data-testid="stSidebar"] div[data-testid="stSidebarNav"] ul li { padding-top: 6px !important; padding-bottom: 6px !important; }
         
-        /* --- KPI Card Styles --- */
+        /* --- KPI Card Styles (Letting Streamlit Handle Themes natively) --- */
         .big-font { font-size:24px !important; font-weight: bold; color: #4CAF50; }
-        .metric-card { background-color: #1E1E1E; padding: 20px; border-radius: 10px; border-left: 5px solid #4CAF50; color: #FFFFFF; margin-bottom: 20px;}
-        .peak-card { background-color: #1E1E1E; padding: 20px; border-radius: 10px; border-left: 5px solid #FF9800; color: #FFFFFF; margin-bottom: 20px;}
-        .carbon-card { background-color: #1E1E1E; padding: 20px; border-radius: 10px; border-left: 5px solid #00BCD4; color: #FFFFFF; margin-bottom: 20px;}
         
-        /* --- Light Mode Overrides --- */
-        @media (prefers-color-scheme: light) {
-            .metric-card { background-color: #f0f2f6; color: #000000; }
-            .peak-card { background-color: #f0f2f6; color: #000000; }
-            .carbon-card { background-color: #f0f2f6; color: #000000; }
-        }
+        .metric-card { background-color: var(--secondary-background-color); padding: 20px; border-radius: 10px; border-left: 5px solid #4CAF50; color: var(--text-color); margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+        .peak-card { background-color: var(--secondary-background-color); padding: 20px; border-radius: 10px; border-left: 5px solid #FF9800; color: var(--text-color); margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+        .carbon-card { background-color: var(--secondary-background-color); padding: 20px; border-radius: 10px; border-left: 5px solid #00BCD4; color: var(--text-color); margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
         </style>
     """, unsafe_allow_html=True)
 

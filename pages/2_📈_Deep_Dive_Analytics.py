@@ -11,13 +11,23 @@ inject_custom_css()
 # --- Page-Specific CSS for Insight Cards ---
 st.markdown("""
     <style>
-    .insight-card-blue { background-color: #1E1E1E; padding: 25px; border-radius: 10px; border-top: 5px solid #00BCD4; color: #FFFFFF; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    .insight-card-green { background-color: #1E1E1E; padding: 25px; border-radius: 10px; border-top: 5px solid #4CAF50; color: #FFFFFF; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    
-    /* Light Mode Overrides */
-    @media (prefers-color-scheme: light) {
-        .insight-card-blue { background-color: #f0f2f6; color: #000000; }
-        .insight-card-green { background-color: #f0f2f6; color: #000000; }
+    .insight-card-blue { 
+        background-color: var(--secondary-background-color); 
+        padding: 25px; 
+        border-radius: 10px; 
+        border-top: 5px solid #00BCD4; 
+        color: var(--text-color); 
+        margin-bottom: 25px; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    }
+    .insight-card-green { 
+        background-color: var(--secondary-background-color); 
+        padding: 25px; 
+        border-radius: 10px; 
+        border-top: 5px solid #4CAF50; 
+        color: var(--text-color); 
+        margin-bottom: 25px; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
     }
     </style>
 """, unsafe_allow_html=True)
