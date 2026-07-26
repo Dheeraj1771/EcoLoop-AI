@@ -5,7 +5,7 @@
 ### *AI-Powered Closed-Loop Building Intelligence for Sustainable Commercial Infrastructure*
 
 <p align="center">
-An intelligent cognitive automation layer that continuously optimizes commercial HVAC systems using real-time telemetry, physics-based simulation, and Large Language Models—reducing energy consumption while guaranteeing occupant comfort and operational safety.
+An intelligent cognitive automation layer that continuously optimizes commercial HVAC systems using real-time telemetry, physics-based simulation, and Large Language Models, reducing energy consumption while guaranteeing occupant comfort and operational safety.
 </p>
 
 ---
