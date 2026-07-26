@@ -221,3 +221,4 @@ ep_outputs/
 *_patched.idf
 .vscode/
 .env
+.DS_Store

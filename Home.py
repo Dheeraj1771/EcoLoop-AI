@@ -1,0 +1,85 @@
+import streamlit as st
+
+from core_logic import inject_custom_css
+
+st.set_page_config(page_title="EcoLoop AI | Home", page_icon="🌱", layout="wide")
+inject_custom_css()
+
+# Custom inline CSS for the Home Page cards to ensure Light/Dark mode compatibility
+st.markdown("""
+    <style>
+    /* Default / Dark Mode Styling */
+    .arch-card-blue { background-color: #1E1E1E; padding: 20px; border-radius: 10px; border-top: 5px solid #2196F3; height: 100%; color: #FFFFFF; }
+    .arch-card-orange { background-color: #1E1E1E; padding: 20px; border-radius: 10px; border-top: 5px solid #FF9800; height: 100%; color: #FFFFFF; }
+
+    /* Light Mode Overrides */
+    @media (prefers-color-scheme: light) {
+        .arch-card-blue { background-color: #f0f2f6; color: #000000; }
+        .arch-card-orange { background-color: #f0f2f6; color: #000000; }
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- HERO SECTION ---
+st.markdown("<h1 style='text-align: center; color: #4CAF50;'>🌱 EcoLoop AI</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: gray;'>Autonomous Building Optimization Engineered for Honeywell</h3>", unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
+
+# --- SYSTEM STATUS BAR ---
+st.markdown("#### 📡 Live System Telemetry")
+c1, c2, c3, c4 = st.columns(4)
+c1.success("🟢 **System Status:** Online")
+c2.info("⚙️ **EnergyPlus Engine:** Synced")
+c3.warning("🧠 **Llama-3.1-8B:** Connected")
+c4.error("📊 **Telemetry Stream:** Active")
+
+st.divider()
+
+# --- ARCHITECTURE SECTION ---
+st.markdown("### 🏗️ The Hybrid Supervisory Architecture")
+st.markdown("EcoLoop AI bridges the gap between Large Language Models (LLMs) and physical HVAC infrastructure safely. We do not give the AI unconstrained control. Instead, we use a hybrid approach:")
+st.markdown("<br>", unsafe_allow_html=True)
+
+colA, colB = st.columns(2)
+with colA:
+    st.markdown("""
+    <div class="arch-card-blue">
+        <h4>🛡️ Deterministic Python Layer</h4>
+        <p>Enforces absolute infrastructure safety rules. During unoccupied hours (19:00 - 07:00), Python overrides the system, locking the facility into a strict 28.0°C Night Setback to guarantee zero energy waste and prevent LLM hallucinations.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with colB:
+    st.markdown("""
+    <div class="arch-card-orange">
+        <h4>🧠 Stochastic LLM Layer</h4>
+        <p>Activates during daytime operations. The Llama-3.1-8B engine analyzes real-time temperature and <b>Fanger PMV</b> comfort indices to dynamically negotiate optimal setpoints, maximizing OpEx savings while preserving human comfort.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("<br><br>", unsafe_allow_html=True)
+
+# --- MODULE NAVIGATION GRID ---
+st.markdown("### 🧭 Platform Modules")
+st.markdown("Use the left sidebar navigation menu to explore the capabilities of the system.")
+
+m1, m2 = st.columns(2)
+with m1:
+    st.info("""
+    #### 📊 Executive Dashboard
+    View the direct correlation between AI decisions and live power draw. Includes high-level financial and ESG KPIs like monthly OpEx savings and Peak Demand Drop.
+    """)
+    st.success("""
+    #### 📄 ESG Reporting
+    Generate and download compliance-ready executive text documents detailing carbon avoidance, reforestation equivalents, and OpEx savings for stakeholders.
+    """)
+
+with m2:
+    st.warning("""
+    #### 📈 Deep Dive Analytics
+    Validate that energy savings did not compromise human comfort using our interactive 2D PMV thermal heatmap and cumulative energy consumption charts.
+    """)
+    st.error("""
+    #### 💬 AI Facility Manager
+    Chat directly with the Llama-3.1-8B facility agent. Query specific daily savings, audit the underlying codebase, or ask for performance breakdowns.
+    """)
